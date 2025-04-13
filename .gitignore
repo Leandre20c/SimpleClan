@@ -1,0 +1,29 @@
+# Java
+*.class
+
+# Build
+/target/
+/build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Minecraft plugins
+/plugins/
+*.jar
+
+# Logs et fichiers temporaires
+logs/
+*.log
+*.tmp
+*.bak
+
+# Maven / Gradle
+.gradle/
+/.mvn/

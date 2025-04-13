@@ -1,0 +1,20 @@
+# ──────────────── ⚙️ GENERAL SETTINGS ────────────────
+
+# Default max members allowed per clan (0 = no limit)
+max-members-per-clan: 5
+
+# Cooldown in seconds between each /clan base teleport
+base-teleport-cooldown: 5
+
+
+# ──────────────── 🏷️ NAME/PREFIX RULES ────────────────
+
+# Max characters for a clan name (recommended: 16)
+max-clan-name-length: 16
+
+# Max characters for a clan prefix (recommended: 2)
+max-clan-prefix-length: 2
+
+# Allowed characters regex (for name and prefix, leave empty to allow anything)
+# Example: ^[A-Za-z0-9_]+$ = letters, numbers, underscores only
+allowed-name-characters: "^[A-Za-z0-9_]+$"

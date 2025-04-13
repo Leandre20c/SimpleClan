@@ -1,0 +1,66 @@
+prefix: "&7[&bSimpleClan&7] "
+
+
+# ──────────────── ⚙️ GENERAL ────────────────
+only-players: "{prefix}&cOnly players can run this command."
+no-permission: "{prefix}&cYou don't have permission to do that."
+unknown-command: "{prefix}&cUnknown clan subcommand. Use /clan help for available options."
+messages-reloaded: "{prefix}&aMessages have been reloaded successfully."
+
+
+# ──────────────── 👥 CLAN MEMBERSHIP ────────────────
+already-in-clan: "{prefix}&cYou are already a member of a clan."
+not-in-clan: "{prefix}&cYou are not in a clan."
+not-in-clan-vault: "{prefix}&cYou must be in a clan to use the vault."
+leave-blocked-owner: "{prefix}&cYou must disband the clan before leaving it, as you are the owner."
+action-requires-owner: "{prefix}&cOnly the clan owner can perform this action."
+left-clan: "{prefix}&aYou have left the clan {name}."
+clan-full: "{prefix}&cThis clan is full and cannot accept more members."
+
+player-not-in-your-clan: "{prefix}&cThat player is not in your clan."
+cant-kick-yourself: "{prefix}&cYou cannot kick yourself from the clan."
+you-were-kicked: "{prefix}&cYou have been kicked from the clan {name}."
+kicked-from-clan: "{prefix}&aYou have kicked {player} from the clan {name}."
+
+
+# ──────────────── ✉️ CLAN INVITATIONS ────────────────
+player-already-in-clan: "{prefix}&cThis player is already a member of a clan."
+player-not-found: "{prefix}&cPlayer not found or offline."
+clan-not-found: "{prefix}&cClan not found."
+invite-sent: "{prefix}&aInvitation sent to {player}."
+invite-received: "{prefix}&aYou have been invited to join the clan {clan}."
+no-invite: "{prefix}&cYou have not been invited to this clan."
+joined-clan: "{prefix}&aYou have joined the clan {name}."
+
+
+# ──────────────── 🏷️ NAMING & VALIDATION ────────────────
+name-too-long: "{prefix}&cClan name must be 16 characters or less."
+prefix-too-long: "{prefix}&cClan prefix must be 2 characters or less."
+clan-exists: "{prefix}&cA clan with that name already exists."
+
+
+# ──────────────── 📜 USAGE HELP ────────────────
+usage-create: "{prefix}&7Usage: /clan create <name> <prefix>"
+usage-rename: "{prefix}&7Usage: /clan rename <name> <prefix>"
+usage-invite: "{prefix}&7Usage: /clan invite <player>"
+usage-join: "{prefix}&7Usage: /clan join <clan>"
+usage-kick: "{prefix}&7Usage: /clan kick <player>"
+
+
+# ──────────────── 🛡️ CLAN ACTIONS ────────────────
+clan-created: "{prefix}&aThe clan &b{name} &ahas been created by {player}!"
+clan-renamed: "{prefix}&aYour clan has been renamed to &f{name}"
+clan-disbanded: "{prefix}&cThe clan &b{name} &chas been disbanded."
+
+
+# ──────────────── 🏠 CLAN BASE ────────────────
+base-set: "{prefix}&aClan base location has been set to your current position."
+teleported-to-base: "{prefix}&aYou have been teleported to your clan's base."
+no-base-set: "{prefix}&cYour clan does not have a base set."
+base-cooldown: "{prefix}&cYou must wait {time} seconds before using /clan base again."
+
+
+# ──────────────── 📋 CLAN DISPLAY / LISTING ────────────────
+clan-list-header: "{prefix}&bClan list &7(Page {page}/{max})"
+members-header: "{prefix}&bMembers of {name}:"
+

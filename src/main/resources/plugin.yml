@@ -1,0 +1,10 @@
+name: SimpleClan
+version: 1.0
+main: org.simpleclan.SimpleClan
+api-version: "1.21"
+softdepend: [ Vault ]
+author: Ouistitiw
+commands:
+  clan:
+    description: Commande principale pour gérer les clans.
+    usage: /clan
