@@ -1,19 +1,25 @@
 package org.simpleclan;
 
+import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.simpleclan.clan.ClanManager;
 import org.simpleclan.command.ClanCommand;
-import org.simpleclan.menu.ClanMenuListener;
 import org.simpleclan.message.MessageManager;
-import org.simpleclan.vault.VaultListener;
+import org.simpleclan.placeholder.ClanPlaceholderExpansion;
 
-public final class SimpleClan extends JavaPlugin {
+public class SimpleClan extends JavaPlugin {
 
     private static SimpleClan instance;
     private static MessageManager messageManager;
     private static Economy economy;
+    private static Permission permissions;
+    private static Chat chat;
+
+    private ClanManager clanManager;
 
     @Override
     public void onEnable() {
@@ -25,37 +31,64 @@ public final class SimpleClan extends JavaPlugin {
             return;
         }
 
-        saveDefaultConfig();
+        // Initialise les gestionnaires
+        this.clanManager = new ClanManager();
         messageManager = new MessageManager(this);
 
+        // Enregistrement de la commande principale
         ClanCommand clanCommand = new ClanCommand();
         getCommand("clan").setExecutor(clanCommand);
         getCommand("clan").setTabCompleter(clanCommand);
 
-        getServer().getPluginManager().registerEvents(new ClanMenuListener(), this);
-        getServer().getPluginManager().registerEvents(new VaultListener(), this);
+        // Enregistrement de l'expansion PlaceholderAPI
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new ClanPlaceholderExpansion(clanManager).register();
+            getLogger().info("✅ Clan PlaceholderAPI expansion registered.");
+        } else {
+            getLogger().warning("⚠️ PlaceholderAPI non détecté, les placeholders ne fonctionneront pas.");
+        }
 
-        getLogger().info("SimpleClan has been enabled.");
+        // Chargement des clans depuis le stockage
+        clanManager.loadAllFromStorage();
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("SimpleClan has been disabled.");
+        // Sauvegarde des clans à l'arrêt
+        clanManager.saveAllToStorage();
     }
 
     private boolean setupEconomy() {
-        if (getServer().getPluginManager().getPlugin("Vault") == null) return false;
+        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+            return false;
+        }
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
-        if (rsp == null) return false;
+        if (rsp == null) {
+            return false;
+        }
         economy = rsp.getProvider();
         return economy != null;
+    }
+
+    private boolean setupPermissions() {
+        RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
+        permissions = rsp.getProvider();
+        return permissions != null;
     }
 
     public static SimpleClan getInstance() {
         return instance;
     }
 
+    public ClanManager getClanManager() {
+        return clanManager;
+    }
+
     public static MessageManager getMessages() {
+        return messageManager;
+    }
+
+    public MessageManager getMessageManager() {
         return messageManager;
     }
 

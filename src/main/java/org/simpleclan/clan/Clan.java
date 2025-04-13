@@ -15,6 +15,10 @@ public class Clan {
     private Location base;
     private double bank;
 
+    public Clan(String name, String prefix, Player owner) {
+        this(name, prefix, owner.getUniqueId());
+    }
+
     public Clan(String name, String prefix, UUID owner) {
         this.name = name;
         this.prefix = prefix;

@@ -3,6 +3,7 @@ package org.simpleclan.clan;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.simpleclan.SimpleClan;
+import org.simpleclan.storage.ClanStorage;
 
 import java.util.*;
 
@@ -94,11 +95,30 @@ public class ClanManager {
         return clans.get(name.toLowerCase());
     }
 
+    public Clan getClanByPlayer(UUID playerId) {
+        return playerClanMap.get(playerId);
+    }
+
     public void setPlayerClan(UUID playerId, Clan clan) {
         playerClanMap.put(playerId, clan);
     }
 
     public Collection<Clan> getAllClans() {
         return clans.values();
+    }
+
+    public void loadAllFromStorage() {
+        for (Clan clan : ClanStorage.loadAllClans()) {
+            clans.put(clan.getName().toLowerCase(), clan);
+            for (UUID member : clan.getMembers()) {
+                playerClanMap.put(member, clan);
+            }
+        }
+    }
+
+    public void saveAllToStorage() {
+        for (Clan clan : clans.values()) {
+            ClanStorage.saveClan(clan);
+        }
     }
 }

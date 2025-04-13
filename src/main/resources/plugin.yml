@@ -1,10 +1,68 @@
 name: SimpleClan
-version: 1.0
+version: 1.0.0
 main: org.simpleclan.SimpleClan
-api-version: "1.21"
-softdepend: [ Vault ]
-author: Ouistitiw
+api-version: 1.21
+author: Homme génial
+description: A simple clan plugin with home, vault, bank, invites and more.
+website: https://github.com/Leandre20c/SimpleClan
+
 commands:
   clan:
-    description: Commande principale pour gérer les clans.
-    usage: /clan
+    description: Base command for all clan-related actions
+    usage: /clan <subcommand>
+    aliases: [clans]
+    permission: simpleclan.use
+    permission-message: You do not have permission to use clan commands.
+
+permissions:
+  simpleclan.use:
+    description: Allows usage of the /clan command
+    default: true
+
+  simpleclan.create:
+    description: Allows players to create a clan
+    default: true
+
+  simpleclan.invite:
+    description: Allows players to invite others to their clan
+    default: true
+
+  simpleclan.join:
+    description: Allows players to join a clan after being invited
+    default: true
+
+  simpleclan.home.set:
+    description: Allows setting the clan home
+    default: true
+
+  simpleclan.home.teleport:
+    description: Allows teleporting to the clan home
+    default: true
+
+  simpleclan.vault.access:
+    description: Allows access to the shared clan vault
+    default: true
+
+  simpleclan.vault.modify:
+    description: Allows modifying items in the clan vault
+    default: true
+
+  simpleclan.bank.deposit:
+    description: Allows depositing money into the clan bank
+    default: true
+
+  simpleclan.bank.withdraw:
+    description: Allows withdrawing money from the clan bank
+    default: op
+
+  simpleclan.prefix.modify:
+    description: Allows changing the clan prefix
+    default: op
+
+  simpleclan.list:
+    description: Allows listing all clans
+    default: true
+
+  simpleclan.admin.reload:
+    description: Allows admin to reload the plugin configuration
+    default: op

@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class BankSubCommand implements SubCommand {
 
-    private final Economy econ = Bukkit.getServicesManager().getRegistration(Economy.class).getProvider();
+    private final Economy econ = SimpleClan.getEconomy();
 
     @Override
     public String getName() {

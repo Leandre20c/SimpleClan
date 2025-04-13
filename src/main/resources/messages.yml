@@ -45,6 +45,7 @@ usage-rename: "{prefix}&7Usage: /clan rename <name> <prefix>"
 usage-invite: "{prefix}&7Usage: /clan invite <player>"
 usage-join: "{prefix}&7Usage: /clan join <clan>"
 usage-kick: "{prefix}&7Usage: /clan kick <player>"
+bank-usage: "{prefix}&7Usage: /clan bank [deposit|withdraw] <amount>"
 
 
 # ──────────────── 🛡️ CLAN ACTIONS ────────────────
@@ -58,6 +59,15 @@ base-set: "{prefix}&aClan base location has been set to your current position."
 teleported-to-base: "{prefix}&aYou have been teleported to your clan's base."
 no-base-set: "{prefix}&cYour clan does not have a base set."
 base-cooldown: "{prefix}&cYou must wait {time} seconds before using /clan base again."
+
+
+# ──────────────── 💰 CLAN BANK ────────────────
+bank-balance: "{prefix}&aClan bank balance: &e${amount}"
+bank-deposit: "{prefix}&aYou have deposited &e${amount} &ainto the clan bank."
+bank-withdraw: "{prefix}&aYou have withdrawn &e${amount} &afrom the clan bank."
+invalid-amount: "{prefix}&cPlease enter a valid positive amount."
+not-enough-money: "{prefix}&cYou don't have enough money."
+not-enough-in-bank: "{prefix}&cThe clan bank doesn't have enough funds."
 
 
 # ──────────────── 📋 CLAN DISPLAY / LISTING ────────────────
