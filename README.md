@@ -1,3 +1,5 @@
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 # SimpleClan
 
 **SimpleClan** is a modular and lightweight clan management plugin for Minecraft servers running Paper 1.21.4.  
@@ -97,10 +99,3 @@ The plugin is designed to be extensible and production-ready for any Minecraft s
 
 Pull requests and suggestions are welcome.  
 For bug reports or feature requests, please use the [Issues](https://github.com/Leandre20c/SimpleClan/issues) tab.
-
----
-
-## 📄 License
-
-This project is currently under a custom license.  
-Please contact the maintainer for usage or distribution rights.
