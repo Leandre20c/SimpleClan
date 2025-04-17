@@ -1,101 +1,110 @@
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+# SimpleClan Plugin
 
-# SimpleClan
+SimpleClan is a powerful, flexible, and user-friendly Minecraft plugin for managing clans. It allows players to form clans, manage permissions and ranks, use clan bases and vaults, and progress through a leveling system that unlocks new features.
 
-**SimpleClan** is a modular and lightweight clan management plugin for Minecraft servers running Paper 1.21.4.  
-It provides essential features for player communities including homes, vaults, banks, ranks, and full persistence.
+## 📦 Features
 
----
+- Create and manage clans (`/clan create <name> <prefix>`)
+- Invite and manage members
+- Promote and demote players through ranks:
+  - Member
+  - Soldier
+  - Commander
+  - Leader
+- Clan bank (Vault economy support)
+- Clan bases (multiple teleport locations)
+- Clan vault (shared inventory with real-time updates)
+- Clan leveling system (1 to 50)
+  - Unlock: more homes, more vaults, colors, cosmetics, more members
+- Menu Interfaces:
+  - Main Menu (`/clan menu`)
+  - Settings Menu (`/clan settings`)
+  - Color Menu (`/clan color`)
+  - Base Menu (`/clan base`)
+  - Vault Menu (`/clan vault`)
+- Fully translatable messages (messages.yml)
+- PlaceholderAPI support
 
-## 🔧 Features
+## 🎮 Commands
 
-- Clan creation with unique names and custom prefixes
-- Member invitation and join system
-- Clan homes and teleportation
-- Shared clan chest and private vault (real-time sync)
-- Vault-based economy integration (clan bank)
-- Persistent data storage per clan (YAML)
-- Clan prefix display in chat and tablist
-- Interactive paginated clan listing
-- Internal rank system: Member, Officer, Leader
+```bash
+/clan create <name> <prefix>
+/clan invite <player>
+/clan join <clan>
+/clan leave
+/clan disband
+/clan promote <player>
+/clan demote <player>
+/clan kick <player>
+/clan setbase <1-5>
+/clan base <1-5>
+/clan vault
+/clan bank deposit|withdraw <amount>
+/clan rename <name> <prefix>
+/clan level
+/clan levelup
+/clan color
+/clan members [clan]
+/clan info [player]
+/clan settings
+/clan help
+```
 
----
+## 🔐 Rank Permissions
 
-## 📥 Installation
+- Member: `/clan bank deposit`, `/clan base`
+- Soldier: + `/clan vault`, `/clan bank withdraw`
+- Commander: + `/clan sethome`, `/clan promote`, `/clan demote`, `/clan kick`
+- Leader: All permissions
 
-1. Download the latest release.
-2. Place the `.jar` file into your server's `/plugins` directory.
-3. Restart your server.
-4. Configuration and clan data will be auto-generated.
+## ⚙️ Configuration
 
----
+```yaml
+leveling:
+  max-level: 50
+  base-cost: 1000.0
+  cost-multiplier: 1.25
+  rewards:
+    5:
+      extra-homes: 1
+    10:
+      clan-color: "§b"
+    15:
+      extra-member: 1
+    20:
+      extra-vaults: 1
+    25:
+      clan-color: "§6"
+    30:
+      extra-member: 2
+    35:
+      clan-color: "§d"
+      extra-vaults: 3
+    40:
+      extra-member: 3
+    45:
+      extra-homes: 3
+    50:
+      clan-color: "§4"
+      extra-vaults: 3
+```
 
-## ⚙️ Requirements
+## 🧩 Dependencies
 
-- Minecraft: **Paper 1.21.4**
-- Java: **17+**
-- Economy support: **Vault API**
-
----
-
-## 💻 Commands Overview
-
-| Command                            | Description                                 |
-|------------------------------------|---------------------------------------------|
-| `/clan create <name> <prefix>`     | Creates a new clan                          |
-| `/clan invite <player>`            | Invites a player to your clan               |
-| `/clan join`                       | Joins the clan you were invited to          |
-| `/clan list`                       | Lists existing clans (with pagination)      |
-| `/clan home`                       | Teleports to the clan home                  |
-| `/clan vault`                      | Opens the private vault                     |
-| `/clan bank`                       | Views and manages clan bank                 |
-| `/clan promote <player>`           | Promotes a member to officer or leader      |
-| `/clan demote <player>`            | Demotes a member to a lower rank            |
-| `/clan leave`                      | Leaves the current clan                     |
-
-> Permissions support coming soon
-
----
+- PaperMC 1.21.4+
+- Vault (economy support)
+- PlaceholderAPI (for placeholders)
 
 ## 📁 File Structure
 
-```
-SimpleClan/
-├── config.yml
-└── clans/
-    ├── <ClanName>.yml
-    └── ...
-```
+- `clans/` – stores each clan in a separate YAML file
+- `vaults/` – stores clan vaults
+- `config.yml` – plugin configuration
+- `messages.yml` – translatable message file
 
-Each clan file contains:
+## 💡 Tips
 
-- Owner UUID
-- Member list
-- Ranks and roles
-- Home location
-- Vault contents
-- Bank balance
-
----
-
-## 🛣️ Planned Features
-
-- Admin tools and moderation commands
-- Clan GUI menus (invites, vault, settings)
-- War and alliance system
-- Message and language customization
-- Developer API for integration
-
----
-
-## 🧑‍💼 About the Project
-
-SimpleClan is maintained by [Leandre20c](https://github.com/Leandre20c).  
-The plugin is designed to be extensible and production-ready for any Minecraft survival or RPG server.
-
----
-
-## 📬 Contributing
-
-Pull requests and suggestions are welcome.  
-For bug reports or feature requests, please use the [Issues](https://github.com/Leandre20c/SimpleClan/issues) tab.
+- Use `/clan settings` to access rename, help and color menu.
+- Color menu only shows unlocked colors.
+- Vaults and Bases scale with levels.
+- Reloading with `/rl` reloads clans properly from disk.
