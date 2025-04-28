@@ -116,6 +116,47 @@ leveling:
 
 ```
 
+# 📄 PlaceholderAPI Support
+
+SimpleClan fully supports **PlaceholderAPI** to allow you to display clan information anywhere you want (scoreboards, tablists, signs, holograms, etc.).
+
+To use the placeholders, make sure you have installed [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) on your server.
+
+## ✅ Available Placeholders
+
+You can use the following placeholders:
+
+| Placeholder | Description |
+|:---|:---|
+| `%simpleclan_tag%` | Displays the clan prefix with colors. |
+| `%simpleclan_raw_tag%` | Displays the clan prefix without colors. |
+| `%simpleclan_name%` | Displays the clan name with colors. |
+| `%simpleclan_raw_name%` | Displays the clan name without colors. |
+| `%simpleclan_owner%` | Displays the name of the clan owner. |
+| `%simpleclan_bank%` | Displays the current amount of money in the clan bank. |
+| `%simpleclan_level%` | Displays the clan level. |
+| `%simpleclan_extra_members%` | Displays the number of extra members unlocked. |
+| `%simpleclan_extra_basess%` | Displays the number of extra homes unlocked. |
+| `%simpleclan_extra_vaults%` | Displays the number of extra vaults unlocked. |
+| `%simpleclan_color%` | Displays the color code currently set for the clan. |
+| `%simpleclan_member_count%` | Displays the number of members in the clan. |
+| `%simpleclan_rank%` | Displays the player's rank inside the clan. |
+| `%simpleclan_is_leader%` | Displays `true` if the player is the clan owner, otherwise `false`. |
+| `%simpleclan_members%` | Displays a comma-separated list of all clan members' names. |
+
+## 🔧 Example Usage
+
+- In your scoreboard plugin: `Clan: %simpleclan_name%`
+- In your tablist plugin: `[%simpleclan_tag%] %player_name%`
+- On a sign or hologram: `Bank: %simpleclan_bank%$`
+
+## 📢 Important
+
+- Some placeholders require the player to be part of a clan to display information.
+- If the player is not in a clan, placeholders may return empty or default values.
+
+Enjoy displaying your clan data anywhere!
+
 ## 🧩 Dependencies
 
 - PaperMC 1.21.4+
