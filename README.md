@@ -20,8 +20,8 @@ SimpleClan is a powerful, flexible, and user-friendly Minecraft plugin for manag
   - Main Menu (`/clan menu`)
   - Settings Menu (`/clan settings`)
   - Color Menu (`/clan color`)
-  - Base Menu (`/clan base`)
-  - Vault Menu (`/clan vault`)
+  - Base Menu (`/clan bases`)
+  - Vault Menu (`/clan vaults`)
 - Fully translatable messages (messages.yml)
 - PlaceholderAPI support
 
@@ -38,8 +38,8 @@ SimpleClan is a powerful, flexible, and user-friendly Minecraft plugin for manag
 /clan kick <player>
 /clan setbase <1-5>
 /clan base <1-5>
-/clan vault
-/clan bank deposit|withdraw <amount>
+/clan vault <1-5>
+/clan bank deposit|withdraw <amount>|all
 /clan rename <name> <prefix>
 /clan level
 /clan levelup
@@ -60,13 +60,38 @@ SimpleClan is a powerful, flexible, and user-friendly Minecraft plugin for manag
 ## ⚙️ Configuration
 
 ```yaml
+# ──────────────── ⚙️ GENERAL SETTINGS ────────────────
+
+# Default max members allowed per clan (0 = no limit)
+max-members-per-clan: 10
+
+# Cooldown in seconds between each /clan base teleport
+base-teleport-cooldown: 5
+
+
+# ──────────────── 🏷️ NAME/PREFIX RULES ────────────────
+
+# Max characters for a clan name (recommended: 16)
+max-clan-name-length: 16
+
+# Max characters for a clan prefix (recommended: 2-3)
+max-clan-prefix-length: 2
+
+# Allowed characters regex (for name and prefix, leave empty to allow anything)
+# Example: ^[A-Za-z0-9_]+$ = letters, numbers, underscores only
+allowed-name-characters: "^[A-Za-z0-9_]+$"
+
+# ──────────────── ⚔️ CLAN LEVELING CONFIG ────────────────
 leveling:
   max-level: 50
   base-cost: 1000.0
-  cost-multiplier: 1.25
-  rewards:
+  linear-increment: 500.0
+  rewards: #Availables : clan-color, extra-member, extra-homes, extra-vaults
+    1:
+      clan-color: "§4"
     5:
       extra-homes: 1
+      clan-color: "§c"
     10:
       clan-color: "§b"
     15:
@@ -85,8 +110,10 @@ leveling:
     45:
       extra-homes: 3
     50:
-      clan-color: "§4"
+      clan-color: "§a "
       extra-vaults: 3
+
+
 ```
 
 ## 🧩 Dependencies
@@ -105,6 +132,13 @@ leveling:
 ## 💡 Tips
 
 - Use `/clan settings` to access rename, help and color menu.
-- Color menu only shows unlocked colors.
+- Color menu only shows unlockable colors.
 - Vaults and Bases scale with levels.
 - Reloading with `/rl` reloads clans properly from disk.
+
+## Incoming
+
+- A level indicator menu
+- Translations files
+- More configurations
+- Clan chat
