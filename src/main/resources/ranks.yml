@@ -1,0 +1,95 @@
+ranks:
+  member:
+    display_name: "§7ʀᴇᴄʀᴜᴇ"
+    description:
+      - "§7Accès au chat de clan."
+    permissions:
+      - clan.chat
+
+  trusted:
+    display_name: "§aᴍᴇᴍʙʀᴇ"
+    description:
+      - "§7Accès aux coffres de clan et aux bases"
+      - "§7Peut déposer de l'argent dans la banque de clan"
+    permissions:
+      - clan.vault.access
+      - clan.base.teleport
+      - clan.bank.deposit
+
+  soldier:
+    display_name: "§fѕᴏʟᴅᴀᴛ"
+    description:
+      - "§7Accès complet à la banque de clan"
+    permissions:
+      - clan.bank.withdraw
+      - clan.banner.get
+
+  commander:
+    display_name: "§6ᴄᴏᴍᴍᴀɴᴅᴀɴᴛ"
+    description:
+      - "§7Bras droit du chef, ne peut pas dissoudre"
+      - "§7et et mettre le clan en publique le clan"
+    permissions:
+      - clan.invite
+      - clan.kick
+      - clan.rank.promote
+      - clan.rank.demote
+      - clan.base.setbase
+      - clan.base.setbase
+      - clan.levelup
+      - clan.settings
+      - clan.settings.rename
+      - clan.settings.color
+      - clan.settings.setclose
+      - clan.banner.set
+
+  leader:
+    display_name: "§cᴄʜᴇꜰ"
+    description:
+      - "§7Peut tout faire, respectez-le"
+    permissions:
+      - clan.disband
+      - clan.rank.setleader
+      - clan.settings.setopen
+
+
+
+# Clan general:
+# - clan.invite
+# - clan.kick
+# - clan.disband
+#
+# Clan bank:
+# - clan.bank.deposit
+# - clan.bank.withdraw
+#
+# Clan vaults:
+# - clan.vault.access
+#
+# Clan bases:
+# - clan.base.teleport
+# - clan.base.setbase
+# - clan.base.remove
+#
+# Clan settings
+# - clan.settings.rename
+# - clan.settings.color
+# - clan.settings.menu
+# - clan.settings.setdescription
+#
+# Clan levels
+# - clan.levelup
+#
+# Clan ranks
+#  - clan.promote
+#  - clan.demote
+#  - clan.setleader
+#
+# Clan chat
+# - clan.chat /clan chat /clan msg
+#
+# Clan banner
+# - clan.banner.set /clan banner set
+# - clan.banner.get /clan banner get
+#
+

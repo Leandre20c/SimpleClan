@@ -1,7 +1,7 @@
 # ──────────────── ⚙️ GENERAL SETTINGS ────────────────
 
 # Default max members allowed per clan (0 = no limit)
-max-members-per-clan: 5
+max-members-per-clan: 10
 
 # Cooldown in seconds between each /clan base teleport
 base-teleport-cooldown: 5
@@ -12,9 +12,51 @@ base-teleport-cooldown: 5
 # Max characters for a clan name (recommended: 16)
 max-clan-name-length: 16
 
+# Min characters for a clan name (recommended: 5)
+min-clan-name-length: 16
+
 # Max characters for a clan prefix (recommended: 2)
 max-clan-prefix-length: 2
+
+# Min characters for a clan prefix (recommended: 2)
+min-clan-prefix-length: 2
+
+# Max characters for a clan description (recommended: 64)
+max-clan-description-length: 64
 
 # Allowed characters regex (for name and prefix, leave empty to allow anything)
 # Example: ^[A-Za-z0-9_]+$ = letters, numbers, underscores only
 allowed-name-characters: "^[A-Za-z0-9_]+$"
+
+# ──────────────── ⚔️ CLAN LEVELING CONFIG ────────────────
+leveling:
+  max-level: 50
+  base-cost: 1000.0
+  linear-increment: 500.0
+  rewards: #clan-color, extra-member, extra-homes, extra-vaults
+    1:
+      clan-color: "§4"
+    5:
+      extra-homes: 1
+      clan-color: "§c"
+    10:
+      clan-color: "§b"
+    15:
+      extra-member: 1
+    20:
+      extra-vaults: 1
+    25:
+      clan-color: "§6"
+    30:
+      extra-member: 2
+    35:
+      clan-color: "§d"
+      extra-vaults: 3
+    40:
+      extra-member: 3
+    45:
+      extra-homes: 3
+    50:
+      clan-color: "§a "
+      extra-vaults: 3
+

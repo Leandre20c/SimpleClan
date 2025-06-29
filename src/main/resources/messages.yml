@@ -1,11 +1,12 @@
-prefix: "&7[&bSimpleClan&7] "
+prefix: "&cᴄʟᴀɴѕ "
 
 
 # ──────────────── ⚙️ GENERAL ────────────────
 only-players: "{prefix}&cOnly players can run this command."
 no-permission: "{prefix}&cYou don't have permission to do that."
 unknown-command: "{prefix}&cUnknown clan subcommand. Use /clan help for available options."
-messages-reloaded: "{prefix}&aMessages have been reloaded successfully."
+reloaded: "{prefix}&aMessages, config, guis and ranks have been reloaded successfully."
+no-clan-permission: "{prefix}&cYou must be {needed_rank} to perfom this action."
 
 
 # ──────────────── 👥 CLAN MEMBERSHIP ────────────────
@@ -21,6 +22,15 @@ player-not-in-your-clan: "{prefix}&cThat player is not in your clan."
 cant-kick-yourself: "{prefix}&cYou cannot kick yourself from the clan."
 you-were-kicked: "{prefix}&cYou have been kicked from the clan {name}."
 kicked-from-clan: "{prefix}&aYou have kicked {player} from the clan {name}."
+
+player-promoted: "{prefix}&a{player} has been promoted to {rank}."
+cannot-promote: "{prefix}&cYou cannot promote this player further."
+cannot-promote-leader: "{prefix}&cYou cannot promote the leader."
+cant-promote-yourself: "{prefix}&cYou can't promote yourself."
+player-demoted: "{prefix}&a{player} has been demoted to {rank}."
+cannot-demote: "{prefix}&cThis player is already the lowest rank."
+cant-demote-yourself: "{prefix}&cYou can't demote yourself."
+
 
 
 # ──────────────── ✉️ CLAN INVITATIONS ────────────────
@@ -46,19 +56,28 @@ usage-invite: "{prefix}&7Usage: /clan invite <player>"
 usage-join: "{prefix}&7Usage: /clan join <clan>"
 usage-kick: "{prefix}&7Usage: /clan kick <player>"
 bank-usage: "{prefix}&7Usage: /clan bank [deposit|withdraw] <amount>"
+usage-tag: "{prefix}&cClan prefix must only contain letters and numbers."
+usage-promote: "{prefix}&7Usage: /clan promote <player>"
+usage-demote: "{prefix}&7Usage: /clan demote <player>"
 
 
 # ──────────────── 🛡️ CLAN ACTIONS ────────────────
 clan-created: "{prefix}&aThe clan &b{name} &ahas been created by {player}!"
 clan-renamed: "{prefix}&aYour clan has been renamed to &f{name}"
 clan-disbanded: "{prefix}&cThe clan &b{name} &chas been disbanded."
+description-set: "{prefix}&aThe clan description has been set"
+description-changed: "{prefix}&aThe clan description has been changed"
 
 
 # ──────────────── 🏠 CLAN BASE ────────────────
 base-set: "{prefix}&aClan base location has been set to your current position."
-teleported-to-base: "{prefix}&aYou have been teleported to your clan's base."
 no-base-set: "{prefix}&cYour clan does not have a base set."
+no-base-nb-set:  "{prefix}&cYour clan don't set the base {base_index}."
 base-cooldown: "{prefix}&cYou must wait {time} seconds before using /clan base again."
+teleport-start: "{prefix}&cTeleporting to base {base_index}"
+teleport-cancelled: "{prefix}&cTeleportation cancelled because you moved."
+teleported-to-base: "{prefix}&aYou have been teleported to your clan base."
+teleporting-in: "&c&lbase {base_index} &r&7→ &eTeleporting in &6{seconds}"
 
 
 # ──────────────── 💰 CLAN BANK ────────────────
@@ -70,7 +89,18 @@ not-enough-money: "{prefix}&cYou don't have enough money."
 not-enough-in-bank: "{prefix}&cThe clan bank doesn't have enough funds."
 
 
+# ──────────────── 📈 CLAN LEVELING ────────────────
+level-max: "{prefix}&cYour clan is already at the max level."
+level-up-success: "{prefix}&aYour clan leveled up to level &e{level}&a! &7(-${cost})"
+level-up-insufficient-funds: "{prefix}&cYour clan bank doesn't have enough money to level up. Needed: &e${cost}"
+
+
+
 # ──────────────── 📋 CLAN DISPLAY / LISTING ────────────────
 clan-list-header: "{prefix}&bClan list &7(Page {page}/{max})"
 members-header: "{prefix}&bMembers of {name}:"
 
+
+# ──────────────── CLAN MESSAGE FORMAT ────────────────
+# Placesholders: {clan_prefix} {clan_name} {player_name} {player_clan_rank} {message}
+chat-format: "[{clan_prefix}] {player_clan_rank} {player_name} : {message}"

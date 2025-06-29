@@ -1,68 +1,88 @@
-name: SimpleClan
-version: 1.0.0
-main: org.simpleclan.SimpleClan
+name: ClassyClan
+version: 1.1.1
+main: org.classyclan.ClassyClan
 api-version: 1.21
-author: Homme génial
-description: A simple clan plugin with home, vault, bank, invites and more.
+author: Ouistitiw
+description: A simple clan plugin with homes, vaults, bank, levels and more.
 website: https://github.com/Leandre20c/SimpleClan
 
 commands:
   clan:
     description: Base command for all clan-related actions
     usage: /clan <subcommand>
-    aliases: [clans]
+    aliases: [clans, c]
     permission: simpleclan.use
     permission-message: You do not have permission to use clan commands.
 
 permissions:
+  # Permission globale
+  simpleclan.player.*:
+    description: "Donne tous les droits du plugin ClassyClan."
+    default: op
+    children:
+      simpleclan.use: true
+      simpleclan.create: true
+      simpleclan.invite: true
+      simpleclan.join: true
+      simpleclan.home.set: true
+      simpleclan.home.teleport: true
+      simpleclan.vault.access: true
+      simpleclan.vault.modify: true
+      simpleclan.bank.deposit: true
+      simpleclan.bank.withdraw: true
+      simpleclan.prefix.modify: true
+      simpleclan.list: true
+
+  # Permissions de base
   simpleclan.use:
-    description: Allows usage of the /clan command
+    description: "Permet d'utiliser la commande /clan."
     default: true
 
   simpleclan.create:
-    description: Allows players to create a clan
+    description: "Permet de créer un clan."
     default: true
 
   simpleclan.invite:
-    description: Allows players to invite others to their clan
+    description: "Permet d'inviter des joueurs dans son clan."
     default: true
 
   simpleclan.join:
-    description: Allows players to join a clan after being invited
+    description: "Permet de rejoindre un clan après invitation."
     default: true
 
   simpleclan.home.set:
-    description: Allows setting the clan home
+    description: "Permet de définir l'emplacement du home du clan."
     default: true
 
   simpleclan.home.teleport:
-    description: Allows teleporting to the clan home
+    description: "Permet de se téléporter au home du clan."
     default: true
 
   simpleclan.vault.access:
-    description: Allows access to the shared clan vault
+    description: "Permet d'accéder au coffre partagé du clan."
     default: true
 
   simpleclan.vault.modify:
-    description: Allows modifying items in the clan vault
+    description: "Permet de modifier le contenu du coffre du clan."
     default: true
 
   simpleclan.bank.deposit:
-    description: Allows depositing money into the clan bank
+    description: "Permet de déposer de l'argent dans la banque du clan."
     default: true
 
   simpleclan.bank.withdraw:
-    description: Allows withdrawing money from the clan bank
+    description: "Permet de retirer de l'argent de la banque du clan."
     default: op
 
   simpleclan.prefix.modify:
-    description: Allows changing the clan prefix
+    description: "Permet de modifier le préfixe du clan."
     default: op
 
   simpleclan.list:
-    description: Allows listing all clans
+    description: "Permet de lister tous les clans existants."
     default: true
 
   simpleclan.admin.reload:
-    description: Allows admin to reload the plugin configuration
+    description: "Permet de recharger la configuration du plugin."
     default: op
+

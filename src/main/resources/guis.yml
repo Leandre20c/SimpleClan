@@ -1,0 +1,326 @@
+###############################################################################
+# SimpleClan GUI Configuration (guis.yml)
+#
+# Customize menu titles and all buttons in your menus here.
+# – Menu titles are defined under “menus:”
+# – All items of each menu are defined under “items:<menuKey>:”
+#
+# Slot positions and inventory sizes remain hardcoded
+# in your Java code. You can ONLY modify here:
+#   • material
+#   • name    (with placeholders)
+#   • lore    (list of lines, with placeholders)
+#
+# Available placeholders (examples):
+#   {clanName}, {clanPrefix}, {sort}, {filter}, {manageLabel},
+#   {current}/{max}, {level}, {bank}, {playerName}, {playerRank},
+#   {index}, {description}, {memberCount}, {memberName}, {memberRank},
+#   {dyeMaterial}, {colorName}, {status}, {requiredLevel},
+#   {ranksList}
+# Check wiki to know where you can use it
+###############################################################################
+
+menus:
+  allClans:
+    title: "&cᴄʟᴀɴ ʟɪѕᴛ"
+  clanView:
+    title: "&cᴄʟᴀɴ : {clanName}"
+  vaults:
+    title: "&cᴄʟᴀɴ ᴠᴀᴜʟᴛѕ"
+  bases:
+    title: "&cᴄʟᴀɴ ʙᴀѕᴇѕ"
+  clanMain:
+    title: "{clanPrefix} {clanName}"
+  color:
+    title: "&cᴄʟᴀɴ ᴄᴏʟᴏʀѕ"
+  settings:
+    title: "&cᴄʟᴀɴ ѕᴇᴛᴛɪɴɢѕ"
+  members:
+    title: "&eᴍᴇᴍʙᴇʀѕ ᴏꜰ {clanName}"
+  memberOptions:
+    title: "&6ᴍᴀɴᴀɢᴇ ᴍᴇᴍʙᴇʀ ︱ {memberName}"
+
+items:
+  common:
+    filler:
+      material: GRAY_STAINED_GLASS_PANE
+      name: ""
+  # ===================================================================
+  #  All Clans menu
+  # ===================================================================
+  allClans:
+    filterButton:
+      material: FEATHER
+      name:     "&eFilter: {filter}"
+      lore:
+        - "&7Click to change filter"
+    sortButton:
+      material: HOPPER
+      name:     "&eSort: {sort}"
+      lore:
+        - "&7Click to change sort order"
+    manageClan:
+      material: END_CRYSTAL
+      name:     "&dManage your clan"
+      lore:
+        - "&7Click to manage or create a clan"
+    createClan:
+      material: END_CRYSTAL
+      name:     "&dCreate your clan"
+      lore:
+        - "&7Click to manage or create a clan"
+    prevPage:
+      material: ARROW
+      name:     "&c« Previous"
+      lore:
+        - "&7Go to previous page"
+    nextPage:
+      material: ARROW
+      name:     "&aNext »"
+      lore:
+        - "&7Go to next page"
+
+  # ===================================================================
+  #  Vaults menu
+  # ===================================================================
+  vaults:
+    vaultAvailable:
+      material: CHEST
+      name:     "&aVault {index}"
+      lore:
+        - "&7Click to open vault {index}"
+    vaultUnavailable:
+      material: BARRIER
+      name:     "&cVault {index} Locked"
+      lore:
+        - "&7Unlock at higher levels"
+    back:
+      material: ARROW
+      name:     "&e← Back"
+      lore:
+        - "&7Return to clan main menu"
+    close:
+      material: BARRIER
+      name:     "&c✕ Close"
+      lore:
+        - "&7Close this menu"
+
+  # ===================================================================
+  #  Bases menu
+  # ===================================================================
+  bases:
+    baseAvailable:
+      material: ENDER_PEARL
+      name:     "&aBase {index}"
+      lore:
+        - "&7Click to teleport to base {index}"
+    baseUnavailable:
+      material: BARRIER
+      name:     "&cBase {index} Locked"
+      lore:
+        - "&7Unlock at higher levels"
+        - "&7Use /clan setbase to set"
+    back:
+      material: ARROW
+      name:     "&e← Back"
+      lore:
+        - "&7Return to clan main menu"
+    close:
+      material: BARRIER
+      name:     "&c✕ Close"
+      lore:
+        - "&7Close this menu"
+
+  # ===================================================================
+  #  Clan Main menu (own clan)
+  # ===================================================================
+  clanMain:
+    viewMembers:
+      material: CLAN_BANNER
+      name:     "&eView Members"
+      lore:
+        - "&7Players: {current}/{max}"
+        - "&7Click to see member list"
+    level:
+      material: BEACON
+      name:     "&eClan Level: {level}"
+      lore:     []
+    settings:
+      material: REDSTONE
+      name:     "&eClan Settings"
+      lore:
+        - "&7Click to adjust clan settings"
+    bank:
+      material: RAW_GOLD
+      name:     "&bClan Bank: {bank}"
+      lore:
+        - "&7Click to view clan bank balance"
+    playerHead:
+      material: PLAYERSKULL
+      name:     "&e{playerName}"
+      lore:
+        - "&7Rank: {playerRank}"
+    basesButton:
+      material: ENDER_PEARL
+      name:     "&aBases"
+      lore:
+        - "&7Click to open clan bases menu"
+    vaultsButton:
+      material: CHEST
+      name:     "&bVaults"
+      lore:
+        - "&7Click to open clan vaults menu"
+    leave:
+      material: RED_BED
+      name:     "&cLeave clan"
+      lore:
+        - "&7You cannot rejoin without being reinvited"
+
+  # ===================================================================
+  #  Clan View menu (other clan)
+  # ===================================================================
+  clanView:
+    banner:
+      material: CLAN_BANNER
+      name:     "&6{clanName} &7[{clanPrefix}]"
+      lore:
+        - "&7Description: {description}"
+        - "&7Level: {level}"
+        - "&7Members: {memberCount}"
+        - "&7Bank: {bank}"
+    memberHead:
+      material: PLAYER_HEAD
+      name:     "&e{memberName}"
+      lore:
+        - "&7Role: {memberRank}"
+    back:
+      material: ARROW
+      name:     "&e← Back"
+      lore:
+        - "&7Return to clan list"
+    close:
+      material: BARRIER
+      name:     "&c✕ Close"
+      lore:
+        - "&7Close this menu"
+
+  # ===================================================================
+  #  Color menu
+  # ===================================================================
+  color:
+    colorItem:
+      name:     "{colorName}"
+      lore:
+        - "&7Status: {status}"
+        - "&7Required Level: {requiredLevel}"
+    back:
+      material: ARROW
+      name:     "&e← Back"
+      lore:
+        - "&7Return to settings"
+    close:
+      material: BARRIER
+      name:     "&c✕ Close"
+      lore:
+        - "&7Close this menu"
+
+  # ===================================================================
+  #  Settings menu
+  # ===================================================================
+  settings:
+    ranks:
+      material: SHIELD
+      name:     "&cClan Ranks"
+      lore:
+        - "{ranksList}" # You can edit ranks descriptions in ranks.yml
+    rename:
+      material: NAME_TAG
+      name:     "&eRename Clan"
+      lore:
+        - "&7Usage: /clan rename <newName> <newPrefix>"
+    description:
+      material: BOOK
+      name:     "&6Set Description"
+      lore:
+        - "&7Current: {description}"
+        - "&7Usage: /clan description <text>"
+    disband:
+      material: TNT_MINECART
+      name:     "&cDisband clan"
+      lore:
+        - "&7Usage: /clan disband"
+        - "&7Click disband the clan"
+    color:
+      material: MAGENTA_DYE
+      name:     "&dColor menu"
+      lore:
+        - "&7Usage: /clan color"
+        - "&7Click to open color menu"
+    back:
+      material: ARROW
+      name:     "&e← Back"
+      lore:
+        - "&7Return to clan main menu"
+    close:
+      material: BARRIER
+      name:     "&c✕ Close"
+      lore:
+        - "&7Close this menu"
+  # ===================================================================
+  #  Members Menu
+  # ===================================================================
+  members:
+    memberHead:
+      material: PLAYERSKULL
+      name:     "&e{memberName}"
+      lore:
+        - "&7Role: {memberRank}"
+        - "&7Click to manage this player"
+
+    back:
+      material: ARROW
+      name:     "&e← Back"
+      lore:
+        - "&7Return to clan main menu"
+
+    close:
+      material: BARRIER
+      name:     "&c✕ Close"
+      lore:
+        - "&7Close this menu"
+  # ===================================================================
+  #  Members Options Menu
+  # ===================================================================
+  memberOptions:
+    promote:
+      material: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+      name: "&aPromote"
+      lore:
+        - "&7Click to promote player"
+    demote:
+      material: BRUSH
+      name: "&cDemote"
+      lore:
+        - "&7Click to demote player"
+    kick:
+      material: MACE
+      name: "&4Kick"
+      lore:
+        - "&7Click to kick player from the clan"
+    stats:
+      material: BORDURE_INDENTED_BANNER_PATTERN
+      name: "Player status"
+      lore:
+        - "&7Click to see player's stats"
+    setLeader:
+      material: TOTEM_OF_UNDYING
+      name: "&eGive leadership"
+      lore:
+        - "&7Click to give leadership"
+        - "&cMake sure that you are trusting this player"
+
+    back:
+      material: ARROW
+      name:     "&e← Back"
+      lore:
+        - "&7Return to clan member list"
