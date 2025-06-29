@@ -1,6 +1,6 @@
-# SimpleClan Plugin
+# ClassyClan Plugin
 
-SimpleClan is a powerful, flexible, and user-friendly Minecraft plugin for managing clans. It allows players to form clans, manage permissions and ranks, use clan bases and vaults, and progress through a leveling system that unlocks new features.
+ClassyClan is a powerful, flexible, and user-friendly Minecraft plugin for managing clans. It allows players to form clans, manage permissions and ranks, use clan bases and vaults, and progress through a leveling system that unlocks new features.
 
 ## 📦 Features
 
