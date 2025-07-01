@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.classyclan.api.ClassyClanAPI;
 import org.classyclan.chat.ClanChatListener;
 import org.classyclan.chat.ClanChatManager;
 import org.classyclan.clan.ClanManager;
@@ -40,6 +41,7 @@ public class ClassyClan extends JavaPlugin {
     private GuiManager guiManager;
     private static Economy economy;
     private ClanChatManager clanChatManager;
+    private static ClassyClanAPI api;
 
     @Override
     public void onEnable() {
@@ -51,6 +53,7 @@ public class ClassyClan extends JavaPlugin {
         messageManager = new MessageManager(this);
         this.clanChatManager = new ClanChatManager();
         this.guiManager = new GuiManager(this);
+        api = new ClassyClanAPI(clanManager);
 
         // Enregistrement des commandes
         ClanCommand clanCommand = new ClanCommand();
@@ -158,5 +161,9 @@ public class ClassyClan extends JavaPlugin {
 
     public GuiManager getGuiManager() {
         return guiManager;
+    }
+
+    public static ClassyClanAPI getAPI() {
+        return api;
     }
 }
