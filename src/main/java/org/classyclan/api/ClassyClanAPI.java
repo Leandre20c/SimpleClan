@@ -1,4 +1,4 @@
-﻿package org.classyclan.api;
+package org.classyclan.api;
 
 import org.bukkit.entity.Player;
 import org.classyclan.clan.Clan;
