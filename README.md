@@ -1,4 +1,20 @@
 # ClassyClan Plugin
+[![](https://jitpack.io/v/Leandre20c/ClassyClan.svg)](https://jitpack.io/#Leandre20c/ClassyClan)
+
+Maven hook:
+
+```<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+ 	<dependency>
+	    <groupId>com.github.Leandre20c</groupId>
+	    <artifactId>ClassyClan</artifactId>
+	    <version>Tag</version>
+	</dependency>```
 
 ClassyClan is a powerful, flexible, and user-friendly Minecraft plugin for managing clans. It allows players to form clans, manage permissions and ranks, use clan bases and vaults, and progress through a leveling system that unlocks new features.
 
