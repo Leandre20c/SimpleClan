@@ -1,5 +1,6 @@
 package org.classyclan.api;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.classyclan.clan.Clan;
 import org.classyclan.clan.ClanManager;
@@ -19,8 +20,8 @@ public class ClassyClanAPI {
     /**
      * Récupère le clan d’un joueur (null si aucun).
      */
-    public Clan getClanOf(Player player) {
-        return clanManager.getClanByPlayer(player.getUniqueId());
+    public Clan getClanOf(UUID playerId) {
+        return clanManager.getClanByPlayer(playerId);
     }
 
     /**
@@ -33,8 +34,8 @@ public class ClassyClanAPI {
     /**
      * Vérifie si un joueur est dans un clan.
      */
-    public boolean isInClan(Player player) {
-        return getClanOf(player) != null;
+    public boolean isInClan(UUID playerId) {
+        return getClanOf(playerId) != null;
     }
 
     /**
@@ -61,9 +62,9 @@ public class ClassyClanAPI {
     /**
      * Récupère le rang d’un joueur dans son clan.
      */
-    public String getRank(Player player) {
-        Clan clan = getClanOf(player);
+    public String getRank(UUID playerId) {
+        Clan clan = getClanOf(playerId);
         if (clan == null) return null;
-        return clan.getRank(player.getUniqueId()).name();
+        return clan.getRank(playerId).name();
     }
 }

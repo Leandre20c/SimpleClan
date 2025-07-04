@@ -93,6 +93,9 @@ public class ClassyClan extends JavaPlugin {
         clanManager.loadAllFromStorage();
         loadRankConfigs();
 
+        getLogger().info("✅ ClassyClan API initialized: " + (api != null));
+
+
     }
 
     @Override
