@@ -14,7 +14,8 @@ Maven hook:
 	    <groupId>com.github.Leandre20c</groupId>
 	    <artifactId>ClassyClan</artifactId>
 	    <version>Tag</version>
-	</dependency>```
+	</dependency>
+```
 
 ClassyClan is a powerful, flexible, and user-friendly Minecraft plugin for managing clans. It allows players to form clans, manage permissions and ranks, use clan bases and vaults, and progress through a leveling system that unlocks new features.
 
